@@ -98,7 +98,7 @@ class MyWebServer(socketserver.BaseRequestHandler):
     def handle_301(self, path):
         # handle 301 Moved Permanently
         self.request.sendall(bytearray("HTTP/1.1 301 Moved Permanently\r\n", 'utf-8'))
-        self.request.sendall(bytearray("Location: " + path[4:] + "/\r\n", 'utf-8'))
+        self.request.sendall(bytearray("Location: " + path[3:] + "/\r\n", 'utf-8'))
         self.request.sendall(bytearray("\r\n", 'utf-8'))
 
     def handle_404(self):
